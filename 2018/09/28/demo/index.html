@@ -7,18 +7,18 @@
   
   <title>html2canvas上手 | The Code Poetry anthology of Senar.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#工具简介    简单说html2canvas就是一个将网页转为图片的工具    git传送门    可用npm安装,也可自行下载本地,也可用cdn引入">
+  <meta name="description" content="工具简介简单说html2canvas就是一个将网页转为图片的工具 [git传送门](https://github.com/niklasvh/html2canvas) [教程](http://html2canvas.hertzen.com/getting-started) 可用npm安装,也可自行下载本地,也可用cdn引入 不跟你多比比   html2canvas(dom,{options}).th">
 <meta name="keywords" content="html2canvas 清晰度 base64 上传 七牛 网页截图 截取网页">
 <meta property="og:type" content="article">
 <meta property="og:title" content="html2canvas上手">
 <meta property="og:url" content="http://luvletterldl.github.io/2018/09/28/demo/index.html">
 <meta property="og:site_name" content="The Code Poetry anthology of Senar.">
-<meta property="og:description" content="#工具简介    简单说html2canvas就是一个将网页转为图片的工具    git传送门    可用npm安装,也可自行下载本地,也可用cdn引入">
+<meta property="og:description" content="工具简介简单说html2canvas就是一个将网页转为图片的工具 [git传送门](https://github.com/niklasvh/html2canvas) [教程](http://html2canvas.hertzen.com/getting-started) 可用npm安装,也可自行下载本地,也可用cdn引入 不跟你多比比   html2canvas(dom,{options}).th">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-29T08:22:22.167Z">
+<meta property="og:updated_time" content="2018-09-29T09:46:46.800Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html2canvas上手">
-<meta name="twitter:description" content="#工具简介    简单说html2canvas就是一个将网页转为图片的工具    git传送门    可用npm安装,也可自行下载本地,也可用cdn引入">
+<meta name="twitter:description" content="工具简介简单说html2canvas就是一个将网页转为图片的工具 [git传送门](https://github.com/niklasvh/html2canvas) [教程](http://html2canvas.hertzen.com/getting-started) 可用npm安装,也可自行下载本地,也可用cdn引入 不跟你多比比   html2canvas(dom,{options}).th">
   
     <link rel="alternate" href="./atom.xml" title="The Code Poetry anthology of Senar." type="application/atom+xml">
   
@@ -87,12 +87,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#工具简介<br>    简单说html2canvas就是一个将网页转为图片的工具<br>    <a href="https://github.com/niklasvh/html2canvas" target="_blank" rel="noopener">git传送门</a><br>    可用npm安装,也可自行下载本地,也可用cdn引入</p>
-
+        <h1 id="工具简介"><a href="#工具简介" class="headerlink" title="工具简介"></a><strong>工具简介</strong></h1><pre><code>简单说html2canvas就是一个将网页转为图片的工具
+[git传送门](https://github.com/niklasvh/html2canvas) [教程](http://html2canvas.hertzen.com/getting-started)
+可用npm安装,也可自行下载本地,也可用cdn引入
+</code></pre><h2 id="不跟你多比比"><a href="#不跟你多比比" class="headerlink" title="不跟你多比比"></a>不跟你多比比</h2><p>   <code>html2canvas(dom,{options}).then({callback})</code></p>
+<h2 id="坑"><a href="#坑" class="headerlink" title="坑!"></a>坑!</h2><h3 id="坑之一"><a href="#坑之一" class="headerlink" title="坑之一"></a>坑之一</h3><pre><code>你会发现,不管你怎么配options,最终截取的网页清晰度总是不行,网上也有很多比如设定canvas宽高,然后最后再缩放一类的,我来教你一种
+更暴力的方法:
+    首先去cdn下载[源码](https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js),然后找到
+renderDocument(node.ownerDocument, options, node.ownerDocument.defaultView.innerWidth, node.ownerDocument.defaultView.innerHeight, index)
+改为
+renderDocument(node.ownerDocument, options, node.ownerDocument.defaultView.innerWidth * 2, node.ownerDocument.defaultView.innerHeight * 2, index)
+效果同设定canvas宽高之后在缩放图片尺寸一样的效果.
+</code></pre><h3 id="坑之二"><a href="#坑之二" class="headerlink" title="坑之二"></a>坑之二</h3><pre><code>当你生成的图片需要转为base64编码上传的时候
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://luvletterldl.github.io/2018/09/28/demo/" data-id="cjmn85aak0000rqjb0y9rln3x" class="article-share-link">Share</a>
+      <a data-url="http://luvletterldl.github.io/2018/09/28/demo/" data-id="cjmn959dt0000vejbm4ct0mu5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="./tags/html2canvas-清晰度-base64-上传-七牛-网页截图-截取网页/">html2canvas 清晰度 base64 上传 七牛 网页截图 截取网页</a></li></ul>
