@@ -90,20 +90,16 @@
         <h1 id="工具简介"><a href="#工具简介" class="headerlink" title="工具简介"></a><strong>工具简介</strong></h1><pre><code>简单说html2canvas就是一个将网页转为图片的工具
 [git传送门](https://github.com/niklasvh/html2canvas) [教程](http://html2canvas.hertzen.com/getting-started)
 可用npm安装,也可自行下载本地,也可用cdn引入
-</code></pre><h2 id="不跟你多比比"><a href="#不跟你多比比" class="headerlink" title="不跟你多比比"></a>不跟你多比比</h2><p>   <code>html2canvas(dom,{options}).then({callback})</code></p>
-<h2 id="坑"><a href="#坑" class="headerlink" title="坑!"></a>坑!</h2><h3 id="坑之一"><a href="#坑之一" class="headerlink" title="坑之一"></a>坑之一</h3><pre><code>你会发现,不管你怎么配options,最终截取的网页清晰度总是不行,网上也有很多比如设定canvas宽高,然后最后再缩放一类的,我来教你一种
-更暴力的方法:
-    首先去cdn下载[源码](https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js),然后找到
-renderDocument(node.ownerDocument, options, node.ownerDocument.defaultView.innerWidth, node.ownerDocument.defaultView.innerHeight, index)
-改为
-renderDocument(node.ownerDocument, options, node.ownerDocument.defaultView.innerWidth * 2, node.ownerDocument.defaultView.innerHeight * 2, index)
-效果同设定canvas宽高之后在缩放图片尺寸一样的效果.
-</code></pre><h3 id="坑之二"><a href="#坑之二" class="headerlink" title="坑之二"></a>坑之二</h3><pre><code>当你生成的图片需要转为base64编码上传的时候
-</code></pre>
+</code></pre><h2 id="不跟你多比比"><a href="#不跟你多比比" class="headerlink" title="不跟你多比比"></a>不跟你多比比</h2>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">## 坑!</span><br><span class="line"></span><br><span class="line">### 坑之一</span><br><span class="line">    你会发现,不管你怎么配options,最终截取的网页清晰度总是不行,网上也有很多比如设定canvas宽高,然后最后再缩放一类的,我来教你一种</span><br><span class="line">    更暴力的方法:</span><br><span class="line">        首先去cdn下载[源码](https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js),然后找到</span><br><span class="line">```renderDocument(node.ownerDocument, options, node.ownerDocument.defaultView.innerWidth, node.ownerDocument.defaultView.innerHeight, index)</span><br></pre></td></tr></table></figure>
+<pre><code>改为
+</code></pre><p><code>renderDocument(node.ownerDocument, options, node.ownerDocument.defaultView.innerWidth * 2, node.ownerDocument.defaultView.innerHeight * 2, index)</code><br>    效果同设定canvas宽高之后在缩放图片尺寸一样的效果.</p>
+<h3 id="坑之二"><a href="#坑之二" class="headerlink" title="坑之二"></a>坑之二</h3><pre><code>当你生成的图片需要转为base64编码上传的时候
+</code></pre><p><code>html2canvas(dom,{options}).then({base64 = canvas.toDataURL();})</code><br>    使用这个base64去上传.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://luvletterldl.github.io/2018/09/28/demo/" data-id="cjmn96mc40000vwjbdb64b213" class="article-share-link">Share</a>
+      <a data-url="http://luvletterldl.github.io/2018/09/28/demo/" data-id="cjmn9uciu0000yojbkyjf3pc1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="./tags/html2canvas-清晰度-base64-上传-七牛-网页截图-截取网页/">html2canvas 清晰度 base64 上传 七牛 网页截图 截取网页</a></li></ul>
